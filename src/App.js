@@ -11,16 +11,11 @@ import {Home, About, Contact, Login, Register} from './pages'
 
 const IfTrue = function(boolean)
 {
-  console.log(boolean)
-  if(boolean.boolean && boolean.boolean !== "undefined")
+  if(sessionStorage.getItem("auth") === 'true')
   {
-    console.log("hello")
     return (<Route path="/home"><Home/></Route>)
   }
-  else
-  {
-    return <div><Route path="/"><Login/></Route></div>
-  }
+  return <div><Route path="/"><Login/></Route></div>
 }
 const Reload = function()
 {
@@ -39,7 +34,7 @@ function App() {
           <Contact/>
         </Route>
         <Route path="/register"><Register/></Route>
-        <IfTrue boolean = {sessionStorage.getItem("auth")}/>
+        <IfTrue/>
       </Switch>
     </Router>
   );

@@ -1,8 +1,11 @@
 import React from "react";
-
+import {
+  NavLink
+} from "react-router-dom"
 import {Layout} from '../layout'
 import {Get} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
+import Logout from "./Logout";
 
 class App extends React.Component {
 
@@ -17,7 +20,6 @@ class App extends React.Component {
   }
   render() {
     const { data } = this.state;
-
     return (
         <div>
           <Layout>
@@ -30,6 +32,7 @@ class App extends React.Component {
               "no data to display"
             }
             </ul>
+            <Logout/>
           </Layout>
         </div>
     );

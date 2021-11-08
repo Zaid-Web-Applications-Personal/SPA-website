@@ -4,12 +4,13 @@ import Button from "react-bootstrap/Button";
 import {Layout} from '../layout'
 import {Post} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
-import {Reload} from '../App'
+import { useHistory } from "react-router";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
 
   async function loginUser(credentials) {
     return Post(ENDPOINTS.REGISTER, credentials)
@@ -27,7 +28,7 @@ export default function Register() {
     });
     sessionStorage.setItem("token", token.token)
     sessionStorage.setItem("auth", token.auth)
-    Reload();
+    history.push("/");
   }
 
   return (

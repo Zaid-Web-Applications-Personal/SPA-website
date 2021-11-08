@@ -1,7 +1,6 @@
 import React from "react";
 import {Get} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
-import {Reload} from '../App'
 
 import {
   NavLink
@@ -17,7 +16,14 @@ const logout = async e => {
   const data = Get(ENDPOINTS.LOGOUT);
   window.sessionStorage.setItem("token", data.token)
   window.sessionStorage.setItem("auth", data.auth)
-  Reload()
+}
+
+function isLoggedIn(){
+  if(sessionStorage.getItem("auth") === 'true')
+  {
+    return true;
+  }
+  return false;
 }
 
 const Nav = () => (
@@ -34,24 +40,6 @@ const Nav = () => (
             <NavLink exact to = {navItem.path} activeClassName="">{navItem.name}</NavLink>
           </li>
         ))
-      }
-      {
-        sessionStorage.getItem("auth") === "undefined" && 
-        <li>
-          <NavLink exact to = "/" activeClassName="">Login</NavLink>
-        </li>
-      }
-      {
-        sessionStorage.getItem("auth") === "undefined" && 
-        <li>
-          <NavLink exact to = "/register" activeClassName="">Register</NavLink>
-        </li>
-      }
-      {
-        sessionStorage.getItem("auth") !== "undefined" && 
-        <li>
-          <p onClick={logout} ><NavLink exact to = "/" activeClassName="">Logout</NavLink></p>
-        </li>
       }
     </ul>
   </nav>
