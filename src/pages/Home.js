@@ -1,7 +1,4 @@
 import React from "react";
-import {
-  NavLink
-} from "react-router-dom"
 import {Layout} from '../layout'
 import {Get} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'

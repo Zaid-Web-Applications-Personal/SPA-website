@@ -5,7 +5,6 @@ import {Layout} from '../layout'
 import {Post} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
 import { useHistory } from "react-router";
-import { Reload } from "../App";
 
 export default function Login() {
   const [email, setEmail] = useState("");

@@ -1,6 +1,4 @@
 import React from "react";
-import {Get} from '../API/CallAPI'
-import {ENDPOINTS} from '../API/Endpoints'
 
 import {
   NavLink
@@ -10,21 +8,6 @@ const navs = [
   {path: '/contact', name: 'Contact'},
   {path: '/about', name: 'About'},
 ]
-
-const logout = async e => {
-  e.preventDefault();
-  const data = Get(ENDPOINTS.LOGOUT);
-  window.sessionStorage.setItem("token", data.token)
-  window.sessionStorage.setItem("auth", data.auth)
-}
-
-function isLoggedIn(){
-  if(sessionStorage.getItem("auth") === 'true')
-  {
-    return true;
-  }
-  return false;
-}
 
 const Nav = () => (
   <nav>
