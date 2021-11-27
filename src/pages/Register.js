@@ -28,6 +28,8 @@ export default function Register() {
     });
     sessionStorage.setItem("token", token.token)
     sessionStorage.setItem("auth", token.auth)
+    localStorage.setItem("user", token.user.username)
+    localStorage.setItem("id", token.user.userId)
     history.push("/");
   }
 

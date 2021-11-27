@@ -24,7 +24,7 @@ async function Get(url)
       'Content-Type': 'application/json',
       Accept: "application/json",
       authorization: sessionStorage.getItem("auth") ? "Bearer " + sessionStorage.getItem('token') : ""
-    }
+    },
   })
   return await returnData.json();
 }

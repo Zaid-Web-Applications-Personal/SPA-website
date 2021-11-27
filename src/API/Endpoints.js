@@ -1,11 +1,20 @@
+const url = "https://pintrest-spa-backend.herokuapp.com"
 export const ENDPOINTS = {
 
-  LOGIN: 'http://localhost:3000/api/auth/login',
+  LOGIN: url + '/user/login',
 
-  HOME: 'http://localhost:3000/api/auth/me',
+  HOME: url + '/project/me',
 
-  LOGOUT: 'http://localhost:3000/api/auth/logout',
+  LOGOUT: url + '/user/logout',
 
-  REGISTER: 'http://localhost:3000/api/auth/register',
+  REGISTER: url + '/user',
+
+  CREATE_ALBUM: url + '/album',
+
+  GET_ALBUMS: url + '/album/getAlbums',
+
+  GET_ALBUM: url + '/image/',
+
+  CREATE_IMAGE: url + '/image',
 
 };

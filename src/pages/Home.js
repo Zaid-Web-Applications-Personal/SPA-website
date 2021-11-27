@@ -2,18 +2,17 @@ import React from "react";
 import {Layout} from '../layout'
 import {Get} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
-import Logout from "./Logout";
 
-class App extends React.Component {
+class Home extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { data: null };
   }
 
   async componentDidMount() {
-    const data = await Get(ENDPOINTS.HOME)
-    this.setState({data: data.string})
+    // const data = await Get(ENDPOINTS.HOME)
+    // this.setState({data: data.string})
   }
   render() {
     const { data } = this.state;
@@ -29,11 +28,10 @@ class App extends React.Component {
               "no data to display"
             }
             </ul>
-            <Logout/>
           </Layout>
         </div>
     );
   }
 }
 
-export default App;
+export default Home;
