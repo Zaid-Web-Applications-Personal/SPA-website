@@ -32,7 +32,7 @@ class App extends React.Component{
           <Route path="/contact">
             <Contact/>
           </Route>
-          <Route path="/register"><Register/></Route>
+          <Route path="/register"><Register reload = {this.reload}/></Route>
           {this.state.isAuth && <Route path="/home"><Home/></Route>}
           {this.state.isAuth && <Route path="/create-album"><CreateAlbum reload = {this.reload}/></Route>}
           {this.state.isAuth && <Route path="/albums/:id/newImage" component={CreateImage}></Route>}
