@@ -10,7 +10,7 @@ class Album extends React.Component{
   {
     super(props)
     this.state={
-      data: null,
+      data: [],
       pageURL: props.match.params.id
     }
   }
@@ -29,8 +29,9 @@ class Album extends React.Component{
     return(
       <div>
         <div className="game-container">
+          {console.log(this.state.data)}
           {
-            this.state.data ? (
+            this.state.data.length ? (
               this.state.data.map((album) => (
                   <div className="image-card">
                   <div className = "fill" >
@@ -40,9 +41,11 @@ class Album extends React.Component{
               ))
               ):
               (
-                <>
-                {}
-                </>
+              <div className="d-flex justify-content-center fixed-top position-fixed p-2 py-5 my-5">
+                <h1 className="text-center">
+                  THERE ARE NO IMAGES PLEASE CREATE A NEW ONE
+                </h1>
+              </div>
             )
           }
         </div>

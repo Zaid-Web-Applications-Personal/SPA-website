@@ -6,11 +6,6 @@ import {
 import { Post } from "../API/CallAPI";
 import {ENDPOINTS} from '../API/Endpoints'
 
-const navs = [
-  {path: '/contact', name: 'Contact'},
-  {path: '/about', name: 'About'},
-]
-
 
 export default class MainNav extends React.Component{
   constructor(props)
@@ -47,16 +42,9 @@ export default class MainNav extends React.Component{
           <Nav className="me-auto">
             {
               this.state.isAuth &&
-              <Nav.Link href="">
-                <NavLink exact to = "/home" activeClassName="">Home</NavLink>
+              <Nav.Link>
+                <NavLink exact to = "/albums" activeClassName="">Albums</NavLink>
               </Nav.Link>
-            }
-            {
-            navs.map(navItem => (
-              <Nav.Link href="">
-                <NavLink exact to = {navItem.path} activeClassName="">{navItem.name}</NavLink>
-              </Nav.Link>
-              ))
             }
           </Nav>
           {
@@ -74,12 +62,6 @@ export default class MainNav extends React.Component{
               <Nav>
                 <Nav.Link>
                   <p onClick={this.logout} ><NavLink exact to = "/" activeClassName="">Logout</NavLink></p>
-                </Nav.Link>
-                <Nav.Link>
-                  <NavLink exact to = "/albums" activeClassName="">Albums</NavLink>
-                </Nav.Link>
-                <Nav.Link>
-                  <NavLink exact to = "/create-album" activeClassName="">New Album</NavLink>
                 </Nav.Link>
               </Nav>
             )

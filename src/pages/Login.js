@@ -5,7 +5,6 @@ import {
   Row, 
   Col,
   Form,
-  NavLink
 } from "react-bootstrap";
 import {Post} from '../API/CallAPI'
 import {ENDPOINTS} from '../API/Endpoints'
@@ -82,9 +81,6 @@ class Login extends React.Component{
                 Sign In
               </Button>
             </Form>
-            <div className="text-center text-light">Don't have an account?
-              <NavLink activeClassName="">Sign Up</NavLink>
-            </div>
             </Col>
           </Row>  
         </Container>
